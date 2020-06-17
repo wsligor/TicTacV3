@@ -40,7 +40,7 @@ def main(argv=None):
                     sprite: Cell
                     for sprite in sprites:
                         if sprite.mouse_click(pygame.mouse.get_pos()):
-                            sprite.cell_change()
+                            sprite.cell_change(st)
                             print(sprite.number)
 
 

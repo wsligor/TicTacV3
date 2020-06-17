@@ -5,7 +5,7 @@ class Cell(pygame.sprite.Sprite):
     def __init__(self, x, y, number, st: Setting):
         super().__init__()
         self.number = number
-        self.status = st.STATUS["empty"]
+        self.status = st.STATUS.empty
         self.images = []
         # self.images.append(pygame.Surface((st.SIZE_BLOKS, st.SIZE_BLOKS)))
         self.image = pygame.image.load('img/empty.png')
@@ -33,12 +33,18 @@ class Cell(pygame.sprite.Sprite):
             result =  True
         return result
 
-    def cell_change(self):
-        if self.status == "empty":
+    def cell_change(self, st: Setting):
+        if self.status == st.STATUS.empty:
             print("empty")
-        elif self.status == "zero":
+            self.image = self.images[st.STATUS.zero.value]
+            self.status = st.STATUS.zero
+        elif self.status == st.STATUS.zero:
             print("zero")
-        elif self.status == "cross":
+            self.image = self.images[st.STATUS.cross.value]
+            self.status = st.STATUS.cross
+        elif self.status == st.STATUS.cross:
             print('cross')
+            self.image = self.images[st.STATUS.empty.value]
+            self.status = st.STATUS.empty
         pass
 

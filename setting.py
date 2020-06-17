@@ -1,3 +1,5 @@
+from enum import Enum
+
 class Setting():
     def __init__(self):
         self.BLACK = (0, 0, 0)
@@ -15,4 +17,11 @@ class Setting():
         self.SCREEN_SIZE = (self.WIDTH, self.HEIGHT)
         self.FPS = 60
 
-        self.STATUS = {"empty": 0, "zero": 1, "cross": 2}
+        self.STATUS = CellStatus
+
+
+
+class CellStatus(Enum):
+    empty = 0
+    zero = 1
+    cross = 2
