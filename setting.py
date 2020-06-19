@@ -12,12 +12,14 @@ class Setting():
         self.SIZE_BLOKS = 100
         self.MARGIN = 10
         self.WIDTH = self.BLOKS * self.SIZE_BLOKS + (self.BLOKS + 1) * self.MARGIN
-        self.HEIGHT = self.BLOKS * self.SIZE_BLOKS + (self.BLOKS + 1) * self.MARGIN
+        self.HEIGHT = self.BLOKS * self.SIZE_BLOKS + (self.BLOKS + 1) * self.MARGIN + 50
 
         self.SCREEN_SIZE = (self.WIDTH, self.HEIGHT)
         self.FPS = 60
 
         self.STATUS = CellStatus
+
+        self.PLAYER = PlayerStatus.cross
 
 
 
@@ -25,3 +27,7 @@ class CellStatus(Enum):
     empty = 0
     zero = 1
     cross = 2
+
+class PlayerStatus(Enum):
+    zero = 0
+    cross =1

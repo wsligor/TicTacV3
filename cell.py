@@ -36,15 +36,11 @@ class Cell(pygame.sprite.Sprite):
     def cell_change(self, st: Setting):
         if self.status == st.STATUS.empty:
             print("empty")
-            self.image = self.images[st.STATUS.zero.value]
-            self.status = st.STATUS.zero
-        elif self.status == st.STATUS.zero:
-            print("zero")
             self.image = self.images[st.STATUS.cross.value]
             self.status = st.STATUS.cross
+        elif self.status == st.STATUS.zero:
+            print("zero")
         elif self.status == st.STATUS.cross:
             print('cross')
-            self.image = self.images[st.STATUS.empty.value]
-            self.status = st.STATUS.empty
         pass
 
